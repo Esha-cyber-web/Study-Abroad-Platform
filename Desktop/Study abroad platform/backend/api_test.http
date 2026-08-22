@@ -1,0 +1,16 @@
+### 1. AA new university
+POST http://localhost:5000/api/universities/add
+Content-Type: application/json
+
+{
+  "name": "NUST",
+  "country": "Pakistan",
+  "city": "Islamabad",
+  "description": "Top engineering university in Pakistan.",
+  "website": "https://nust.edu.pk/",
+  "courses": ["Software Engineering", "Mechanical", "Electrical"],
+  "ranking": 350
+}
+
+### 2. See all universities
+GET http://localhost:5000/api/universities

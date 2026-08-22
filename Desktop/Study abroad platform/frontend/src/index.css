@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Default Light Theme Variables */
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  --bg-radial-1: rgba(6, 182, 212, 0.08);
+  --bg-radial-2: rgba(99, 102, 241, 0.05);
+}
+
+/* Dark Theme Variables */
+html.dark-mode {
+  --bg-color: #030712;
+  --text-color: #f3f4f6;
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --card-border: rgba(51, 65, 85, 0.5);
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  --input-text: #f8fafc;
+  --bg-radial-1: rgba(6, 182, 212, 0.12);
+  --bg-radial-2: rgba(99, 102, 241, 0.08);
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Force Body Theme Styles */
+html, body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-image: 
+    radial-gradient(circle at 15% 20%, var(--bg-radial-1) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, var(--bg-radial-2) 0%, transparent 40%) !important;
+  background-attachment: fixed;
+}
+
+/* Force Dark Mode Override on elements */
+html.dark-mode body {
+  background-color: #030712 !important;
+  color: #f3f4f6 !important;
+}
+
+html:not(.dark-mode) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Global Cards & Inputs Styling */
+.card-dark {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input, select, textarea {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--input-text) !important;
+  border-radius: 0.5rem !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #06b6d4 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2) !important;
+}
+
+button {
+  transition: all 0.2s ease-in-out;
+}
